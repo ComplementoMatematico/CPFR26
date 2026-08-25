@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clases Particulares — Prof. Bastiani Calabrano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>
+  // Definida acá arriba para que exista ANTES de que el navegador
+  // intente cargar las imágenes (evita el error de referencia).
+  function handleImgError(img, filename){
+    img.onerror = null;
+    const box = document.createElement("div");
+    box.className = "img-missing";
+    box.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="8.5" cy="9.5" r="1.4" fill="currentColor"/><path d="M21 16l-5.5-5.5L9 17" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Falta<br>' + filename + '</span>';
+    img.replaceWith(box);
+  }
+</script>
+</head>
+<body>
+
+<!-- textura de cuaderno de fondo -->
+<div class="notebook-bg" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="spiral" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="header-inner">
+    <div class="header-text">
+      <h1 class="site-title">Clases Particulares de Álgebra y Cálculo: Fernando Ramirez</h1>
+      <p class="teacher-line">Prof. Bastiani Calabrano Inostroza</p>
+      <ul class="role-list">
+        <li>Licenciado en Educación</li>
+        <li>Profesor de Educación Media en Educación Matemática</li>
+      </ul>
+    </div>
+
+    <!-- Coloca aquí "logo_cm.png" en la misma carpeta que index.html -->
+    <div class="avatar-wrap">
+      <div class="avatar-circle">
+        <img src="logo_cm.png" alt="Foto de Bastiani Calabrano"
+             onerror="handleImgError(this, 'logo_cm.png')">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== INTRO: nombre + descripción + foto ===== -->
+  <section class="intro-section">
+    <div class="intro-card">
+      <p class="intro-eyebrow">Sobre mí</p>
+      <h3 class="intro-name">Prof. Bastiani Calabrano</h3>
+      <p class="intro-desc">
+        Realizo clases particulares personalizadas tanto para las asignaruras de Matemática y Física de nivel media y superior.
+      </p>
+    </div>
+
+    <!-- Coloca aquí tu foto (con o sin fondo transparente), nómbrala "bastiani.png" -->
+    <div class="intro-photo">
+      <div class="intro-photo-circle">
+        <img src="bastiani.png" alt="Bastiani Calabrano"
+             onerror="handleImgError(this, 'bastiani.png')">
+      </div>
+    </div>
+
+    <div></div>
+    <div></div>
+     <div></div>
+    <div></div>
+    <div> En esta sección podrás acceder al material complementario de las clases particulares.</div>
+  
+  </section>
+
+  <!-- ===== CARRUSEL 3D ===== -->
+  <section class="carousel-section" aria-label="Selector de material">
+    <button class="arrow arrow-left" id="prevBtn" aria-label="Panel anterior">
+      <svg viewBox="0 0 24 24" width="26" height="26"><path d="M15 4L7 12L15 20" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <div class="carousel-stage" id="carouselStage">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- las tarjetas se generan/posicionan vía JS, pero el markup base vive aquí -->
+        <article class="panel-card" data-index="0">
+          <span class="panel-tab">01</span>
+          <h2>Material Escrito</h2>
+          <p class="panel-sub">PDF &amp; Imágenes</p>
+        </article>
+        <article class="panel-card" data-index="1">
+          <span class="panel-tab">02</span>
+          <h2>Clases Grabadas</h2>
+          <p class="panel-sub">Video clases</p>
+        </article>
+        <article class="panel-card" data-index="2">
+          <span class="panel-tab">03</span>
+          <h2>Material Complementario</h2>
+          <p class="panel-sub">Enlaces &amp; recursos</p>
+        </article>
+      </div>
+    </div>
+
+    <button class="arrow arrow-right" id="nextBtn" aria-label="Panel siguiente">
+      <svg viewBox="0 0 24 24" width="26" height="26"><path d="M9 4L17 12L9 20" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <div class="dots" id="dots" role="tablist" aria-label="Ir a panel"></div>
+  </section>
+
+  <!-- ===== CONTENIDO SEGÚN PANEL ACTIVO ===== -->
+  <section class="content-section">
+
+    <div class="content-heading">
+      <h3 id="contentTitle">Material Escrito</h3>
+      <p id="contentSubtitle">Guías, apuntes e imágenes de apoyo para repasar en tu tiempo.</p>
+    </div>
+
+    <!-- Panel 0: Material escrito -->
+    <div class="content-panel is-active" id="panel-0">
+      <div class="docs-grid" id="docsGrid"></div>
+    </div>
+
+    <!-- Panel 1: Clases grabadas (estilo Udemy) -->
+    <div class="content-panel" id="panel-1">
+      <div class="lessons-layout">
+        <div class="lessons-player" id="lessonsPlayer">
+          <div class="player-frame" id="playerFrame">
+            <div class="player-placeholder">
+              <svg viewBox="0 0 24 24" width="46" height="46"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
+            </div>
+          </div>
+          <div class="player-meta">
+            <div class="player-meta-top">
+              <p class="player-module" id="playerModule">Módulo 1</p>
+              <div class="player-nav">
+                <button class="player-nav-btn" id="prevLessonBtn" aria-label="Clase anterior">
+                  <svg viewBox="0 0 24 24" width="14" height="14"><path d="M15 4L7 12L15 20" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Anterior
+                </button>
+                <button class="player-nav-btn" id="nextLessonBtn" aria-label="Siguiente clase">
+                  Siguiente
+                  <svg viewBox="0 0 24 24" width="14" height="14"><path d="M9 4L17 12L9 20" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </div>
+            <h4 id="playerTitle">Selecciona una clase</h4>
+            <p class="player-desc" id="playerDesc">Elige una clase de la lista para ver el detalle aquí.</p>
+          </div>
+        </div>
+        <div class="lessons-list" id="lessonsList"></div>
+      </div>
+    </div>
+
+    <!-- Panel 2: Material complementario -->
+    <div class="content-panel" id="panel-2">
+      <div class="extra-grid" id="extraGrid"></div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Ante cualquier duda puede contactarme al correro: <strong>complemento.matematico.cm@gmail.com</strong> </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
