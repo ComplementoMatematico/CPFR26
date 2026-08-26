@@ -96,7 +96,14 @@ const DOCS = [
     descripcion: "Ecuaciones cuadráticas e inecuaciones.",
     meta: "Cálculo (Material de Fernando)",
     url: "material/CAL/guia02.pdf"
-  }
+  },
+  {
+    tipo: "pdf",
+    titulo: "Libro Calculo",
+    descripcion: "Libro complementario de la asignatura.",
+    meta: "Cálculo (Material de Fernando)",
+    url: "material/CAL/LIBRO_PRECALCULO.pdf"
+  },
 ];
 
 /* ---------- 2. CLASES GRABADAS (estilo Udemy) ---------- */
