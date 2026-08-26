@@ -29,7 +29,7 @@
 const DOCS = [
   {
     tipo: "pdf",
-    titulo: "UNIDAD_1_ALGEBRA_BASICA_2026",
+    titulo: "UNIDAD01_ALG",
     descripcion: "Presentación de Álgebra Básica.",
     meta: "Álgebra Básica (Material de Fernando)",
     url: "material/ALG/UNIDAD_1_ALGEBRA_BASICA_2026.pdf"
@@ -62,6 +62,20 @@ const DOCS = [
     meta: "Álgebra Básica (Clases Particulares)",
     url: "material/ALG/CLASE_18_AGO.pdf"
   },
+   {
+    tipo: "pdf",
+    titulo: "CONTROL_01_25_AGO",
+    descripcion: "Control 01 de Taller 01-02.",
+    meta: "Álgebra Básica - Material de Fernando (Clases Particulares)",
+    url: "material/ALG/CONTROL_01_25_AGO.pdf"
+  }, 
+  {
+    tipo: "pdf",
+    titulo: "CONTROL_02_25_AGO",
+    descripcion: "Control 02 de Taller 03.",
+    meta: "Álgebra Básica - Material de Fernando (Clases Particulares)",
+    url: "material/ALG/CONTROL_02_25_AGO.pdf"
+  }, 
   {
     tipo: "pdf",
     titulo: "Apuntes de Cálculo",
@@ -91,16 +105,23 @@ const LESSONS = [
     modulo: "Cálculo",
     titulo: "Clase 01 de Cálculo / Parte I",
     duracion: "00:35:31",
-    descripcion: "Parte I de Clase 01 de Cálculo: Axiomas de cuerpo.",
+    descripcion: "(20-AGO) Parte I de Clase 01 de Cálculo: Axiomas de cuerpo.",
     url: "https://www.dropbox.com/scl/fi/icj7wuh8m3qsmabyrue2i/video1662629645.mp4?rlkey=tr8om3stj904szbmyo8pi4qlk&st=axi501l0&dl=0"
   },
   {
     modulo: "Cálculo",
     titulo: "Clase 01 de Cálculo / Parte II",
     duracion: "01:18:30",
-    descripcion: "Parte II de Clase 01 de Cálculo: Completación de cuadrados e inecuación polinómica.",
+    descripcion: "(20-AGO) Parte II de Clase 01 de Cálculo: Completación de cuadrados e inecuación polinómica.",
     url: "https://www.dropbox.com/scl/fi/o20q7tnzifrczgqmbv85s/video1642135982.mp4?rlkey=r3xxpqrvr3ch4t078io14d7zf&st=njdfu329&dl=0"
-  }
+  },
+  {
+    modulo: "Álgebra",
+    titulo: "Clase 02 de Álgebra",
+    duracion: "01:33:35",
+    descripcion: "(25-AGO) Controles 01 y 02",
+    url: "https://www.dropbox.com/scl/fi/dj4k9a3ad2jvd92q7watt/video1923423025.mp4?rlkey=3xoxb8igylv8lzwcx9aiefqxo&st=umy760uz&dl=0"
+  },
 ];
 
 /* ---------- 3. MATERIAL COMPLEMENTARIO ----------
